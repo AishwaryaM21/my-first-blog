@@ -1,29 +1,13 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Aishwarya's blog</title>
-    </head>
-<body>
-    <h1>My First Blog</h1>
-    <p>Hi there!</p>
-    <em>It's my first blog</em>
-    <p>It works!<br>It actually worked!</p>
-    <strong>Exciting right!!!</strong>
-    <p>Here's django girls link which helpes me to create the blog in the first place.</p>
-    <a href="/">Django Girls Blog</a>
-    <ul><li>Install Python!</li>
-    <li>Install Django and so on!</li></ul>
-    <article>
-        <time>published: 28.01.2022, 12:36</time>
-        <h2><a href="">My first post</a></h2>
-        <p>There is something written in an unknown language in the tutorial. I'll tey to translate in the second article</p>
-    </article>
-    <article>
-        <time>published: 28.01.2022, 12:39</time>
-        <h2><a href="">My second post</a></h2>
-        <p>I figured it was Latin language. Unfortunately , Google Translate can't completely translate it. It says something like movies and commodity.<br>
-            Hopefully see you soon
-        </p>
-    </article>
-</body>
-</html>
+<header>
+    <h1><a href = "/">Django Girls Blog</a></h1>
+</header>
+
+{% for post in posts %}
+   <article>
+       <time>published: {{post.published_date}}</time>
+       <h2><a href="">{{post.title}}</a></h2>
+       <p>{{post.text|linebreaksbr}}</p>
+</article>
+   {{posts}}
+{% endfor %}
